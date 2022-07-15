@@ -1,8 +1,8 @@
-using EmployeeManagement.Api.Services;
-using EmployeeManagement.Api.Models;
+using KeyManagement.Api.Services;
+using KeyManagement.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EmployeeManagement.Api.Controllers;
+namespace KeyManagement.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -41,15 +41,11 @@ public class KeyManagementController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] CreateKey createKey)
+    public async Task<IActionResult> Post()
     {
         try
         {
-            if (createKey == null)
-                return BadRequest();
-
-            var key = await _keyManagementService.CreateKeyAsync(createKey);
-
+            var key = await _keyManagementService.CreateKeyAsync();
             return CreatedAtAction(nameof(Get), new { key.PublicKey.kid }, key);
         }
         catch (Exception ex)

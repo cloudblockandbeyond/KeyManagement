@@ -1,7 +1,7 @@
-using EmployeeManagement.Api.Cryptography;
-using EmployeeManagement.Api.Models;
+using KeyManagement.Api.Cryptography;
+using KeyManagement.Api.Models;
 
-namespace EmployeeManagement.Api.Services;
+namespace KeyManagement.Api.Services;
 
 public class KeyManagementService : IKeyManagementService
 {
@@ -14,7 +14,7 @@ public class KeyManagementService : IKeyManagementService
         _keys = new List<Dictionary<string, SigningKey>>();
     }
 
-    public async Task<SigningKey> CreateKeyAsync(CreateKey createKey)
+    public async Task<SigningKey> CreateKeyAsync()
     {
         var kid = $"store-{ DateTimeOffset.UtcNow.ToUnixTimeSeconds() }";
 

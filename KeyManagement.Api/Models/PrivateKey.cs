@@ -1,4 +1,4 @@
-namespace EmployeeManagement.Api.Models;
+namespace KeyManagement.Api.Models;
 
 public record PrivateKey
 (

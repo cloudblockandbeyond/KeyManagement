@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
-using EmployeeManagement.Api.Models;
+using KeyManagement.Api.Models;
 
-namespace EmployeeManagement.Api.Cryptography;
+namespace KeyManagement.Api.Cryptography;
 
 public class CryptoProvider
 {
